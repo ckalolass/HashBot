@@ -1,11 +1,5 @@
 ﻿using HashBot.Core.Extensions;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HashBot.Core.Models
 {
@@ -16,6 +10,19 @@ namespace HashBot.Core.Models
         public String UserName { get; set; }
 
         public String ImageUri { get; set; }
+
+        private String _BiggerImageUri;
+        public String BiggerImageUri
+        {
+            get
+            {
+                if (_BiggerImageUri == null)
+                {
+                    _BiggerImageUri = ImageUri.Replace("normal", "bigger");
+                }
+                return _BiggerImageUri;
+            }
+        }
 
         public String TweetDate { get; set; }
 

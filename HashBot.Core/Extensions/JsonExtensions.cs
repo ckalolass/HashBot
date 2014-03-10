@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HashBot.Core.Extensions
 {
-    public static class JsonExceptions
+    public static class JsonExtensions
     {
         public static T GetValueOrDefault<T>(this JToken jtoken, String key)
         {

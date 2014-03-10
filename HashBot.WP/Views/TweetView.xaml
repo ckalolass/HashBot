@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:views="clr-namespace:Cirrious.MvvmCross.WindowsPhone.Views;assembly=Cirrious.MvvmCross.WindowsPhone"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:h="clr-namespace:HashBot.WP.Helpers"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -36,6 +37,13 @@
                 Grid.RowSpan="2"
                 HorizontalAlignment="Left"
                 />
+        <h:PlaceholderImage     Width="96"
+                                Height="96"
+                                Grid.RowSpan="2"
+                                HorizontalAlignment="Left"
+                                PlaceholderSource="\Assets\avatar@2x.png"
+                                Source="{Binding SelectedTweet.BiggerImageUri}"
+                                />
         <TextBlock  Grid.Column="1"
                     Grid.ColumnSpan="2"
                     Grid.Row="0"

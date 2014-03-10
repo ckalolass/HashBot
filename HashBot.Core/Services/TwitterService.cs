@@ -5,7 +5,6 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.IO.IsolatedStorage;
 using System.Net;
 using System.Runtime.CompilerServices;
@@ -137,12 +136,6 @@ namespace HashBot.Core.Services
             foreach (var i in jo["statuses"].Children())
             {
                 tm = new TweetModel();
-                //tm.Id = i["id"].Value<Int64>();
-                //tm.Source = i["source"].Value<String>();
-                //tm.Text = i["text"].Value<String>();
-                //tm.TweetDate = i["created_at"].Value<String>();
-                //tm.UserName = i["user"]["name"].Value<String>();
-                //tm.ImageUri = i["user"]["profile_image_url"].Value<String>();
                 tm.Id = i.GetValueOrDefault<Int64>("id");
                 tm.Source = i.GetValueOrDefault<String>("source");
                 tm.Text = i.GetValueOrDefault<String>("text");
@@ -151,7 +144,6 @@ namespace HashBot.Core.Services
                 tm.ImageUri = i.GetValueOrDefault<String>("user", "profile_image_url");
                 yield return tm;
             }
-            //DateTime date = DateTimeExtensions.ParseTwitterDate(tm.TweetDate);
             tag.NextResults = jo.GetValueOrDefault<String>("search_metadata", "next_results") ??
                 String.Format("?max_id={0}&q={1}", (tm.Id - 1).ToString(), HttpUtility.UrlEncode(tag.Title));
         }

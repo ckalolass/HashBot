@@ -87,7 +87,7 @@
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\IsolatedStorageExtensions.cs" />
-    <Compile Include="Extensions\JsonExceptions.cs" />
+    <Compile Include="Extensions\JsonExtensions.cs" />
     <Compile Include="Extensions\RestSharpExtensions.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\TagModel.cs" />
