@@ -119,6 +119,9 @@
     <Reference Include="Cirrious.MvvmCross.WindowsPhone">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack-PCL">
+      <HintPath>..\packages\HtmlAgilityPack-PCL.1.4.6\lib\HtmlAgilityPack-PCL.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
     </Reference>

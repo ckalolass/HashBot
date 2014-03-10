@@ -10,6 +10,7 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 namespace HashBot.Core.Services
 {
     public class TwitterService : ITwitterService, INotifyPropertyChanged, IBusy
@@ -137,7 +138,12 @@ namespace HashBot.Core.Services
             {
                 tm = new TweetModel();
                 tm.Id = i.GetValueOrDefault<Int64>("id");
-                tm.Source = i.GetValueOrDefault<String>("source");
+                var s = i.GetValueOrDefault<String>("source");
+                if (!String.IsNullOrEmpty(s))
+                {
+                    var n = HtmlAgilityPack.HtmlNode.CreateNode(s);
+                    tm.Source = n.HasChildNodes ? n.FirstChild.InnerText : n.InnerText;
+                }
                 tm.Text = i.GetValueOrDefault<String>("text");
                 tm.TweetDate = i.GetValueOrDefault<String>("created_at");
                 tm.UserName = i.GetValueOrDefault<String>("user", "name");
