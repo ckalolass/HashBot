@@ -1,0 +1,14 @@
+﻿using HashBot.Core.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HashBot.Core.Services
+{
+    public interface ITwitterService
+    {
+        Task<IEnumerable<TweetModel>> Search(TagModel tag);
+    }
+}
