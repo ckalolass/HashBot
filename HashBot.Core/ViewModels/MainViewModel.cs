@@ -104,7 +104,8 @@ namespace HashBot.Core.ViewModels
                             {
                                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                                 {
-                                    _SelectedTag.IsLoaded = true;
+                                    if (_SelectedTag.RelevantTweets.Count > 0)
+                                        _SelectedTag.IsLoaded = true;
                                 });
                             });
                 }
